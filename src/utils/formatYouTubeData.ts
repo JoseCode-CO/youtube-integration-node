@@ -1,8 +1,8 @@
 import { formatData } from "../typescript/interfaces/all.interface";
-import { NuevaInterface } from "../typescript/interfaces/all.interface";
+import { objectStructure } from "../typescript/interfaces/all.interface";
 
 
-export const formatYouTubeData = (items: NuevaInterface[]): formatData[] => {
+export const formatYouTubeData = (items: objectStructure[]): formatData[] => {
     return items.map((item) => ({
         published_at: item.snippet.publishedAt,
         id: item.id.videoId,

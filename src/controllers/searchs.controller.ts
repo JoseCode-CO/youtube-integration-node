@@ -6,11 +6,12 @@ export const getData = async (req: Request, res: Response) => {
   const { search } = req.query;
   try {
     const items = await searchYouTube(search as string);
-    const videos = formatYouTubeData(items);
-    res.status(200).json(videos);
+
+    const responseMessage = items.length === 0 ? "Video not found." : formatYouTubeData(items);
+    res.status(200).json(responseMessage);
 
   } catch (error) {
-
-    res.status(500).json({ error });
+    console.log(error)
+    res.status(500).json({ message: "Internal server error" });
   }
 };

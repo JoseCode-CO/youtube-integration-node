@@ -7,7 +7,7 @@ export interface formatData {
     extra: string;
 }
 
-export interface NuevaInterface {
+export interface objectStructure {
     snippet: {
         publishedAt: string;
         title: string;
