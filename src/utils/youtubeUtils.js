@@ -1,5 +1,6 @@
 // youtubeUtils.js
 import axios from 'axios';
+import { handleAPIError } from '../helpers/errors.js';
 
 // Función para realizar la solicitud a la API de YouTube
 export const searchYouTube = async (search) => {
@@ -13,9 +14,14 @@ export const searchYouTube = async (search) => {
       }
     });
 
-    return response.data.items;
+    // Comprobar si la respuesta contiene datos válidos
+    if (response.data && response.data.items && Array.isArray(response.data.items)) {
+      return response.data.items;
+    } else {
+      throw new Error('Respuesta inválida de la API de YouTube');
+    }
   } catch (error) {
-    console.error('Error al obtener datos de YouTube:', error);
-    throw new Error('Error al obtener datos de YouTube');
+    // Llamar a la función handleAPIError para manejar los errores
+    handleAPIError(error);
   }
 };
