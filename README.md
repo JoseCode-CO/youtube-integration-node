@@ -20,11 +20,10 @@ Asegúrate de tener Node.js y npm instalados en tu sistema.
 
 Ejecute npm install, para instalar las dependencias y luego npm run dev para ejecutar el proyecto
 
+# Instalación
 Instalación con Docker
 Requisitos Previos
 Asegúrate de tener Docker instalado en tu sistema.
-
-# Instalación
 
 docker build -t <NOMBRE_DE_LA_IMAGEN> .
 Una vez que la imagen se haya construido, puedes ejecutar el contenedor Docker utilizando el siguiente comando:
