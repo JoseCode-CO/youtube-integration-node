@@ -1,5 +1,10 @@
 # youtube-integration-node
 
+# Objetivos del Proyecto
+Configurar un proyecto de Node.js desde cero, incluyendo la instalación de dependencias necesarias.
+Conectar la aplicación con la API de YouTube utilizando la autenticación adecuada.
+Implementar funciones para buscar y obtener información detallada sobre vídeos.
+
 En este README, explicaremos cómo clonar e instalar un proyecto de Node.js en dos escenarios: utilizando Docker y sin Docker.
 
 Clonar el Repositorio
