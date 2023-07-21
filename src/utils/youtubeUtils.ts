@@ -1,11 +1,10 @@
-// youtubeUtils.js
 import axios from 'axios';
-import { handleAPIError } from '../helpers/errors.js';
+import env  from '../utils/env';
 
 // Función para realizar la solicitud a la API de YouTube
-export const searchYouTube = async (search) => {
+export const searchYouTube = async (search:string) => {
   try {
-    const response = await axios.get(process.env.YOUTUBE_API_BASE_URL, {
+    const response = await axios.get(env.YOUTUBE_API_BASE_URL, {
       params: {
         part: 'snippet',
         q: search,
@@ -21,7 +20,6 @@ export const searchYouTube = async (search) => {
       throw new Error('Respuesta inválida de la API de YouTube');
     }
   } catch (error) {
-    // Llamar a la función handleAPIError para manejar los errores
-    handleAPIError(error);
+    console.log(error)
   }
 };
